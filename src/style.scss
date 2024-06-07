@@ -1,0 +1,82 @@
+.selected-pages {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px 0px;
+}
+
+.selected-pages ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	flex-wrap: wrap;
+	list-style: none;
+	width: 100%;
+	gap: 15px;
+}
+
+.selected-pages li {
+	flex: 1;
+	box-sizing: border-box;
+}
+
+.selected-pages a {
+	display: flex;
+	height: 180px;
+	min-width: 190px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	padding: 5px;
+	box-shadow:
+		rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+		rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+	background-color: var(--animation-color);
+	position: relative;
+	color: white;
+	overflow: hidden; /* Ensure the pseudo-element doesn't spill out */
+	transition:
+		transform 0.3s,
+		box-shadow 0.3s,
+		background-color 0.3s; /* Smooth transitions */
+}
+
+.selected-pages a::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -50%;
+	z-index: 2;
+	display: block;
+	width: 200%;
+	height: 100%;
+	background-color: #465f5c66;
+	transition:
+		transform 0.3s,
+		background-color 0.3s; /* Smooth transitions */
+	transform: skewX(45deg);
+}
+
+.selected-pages a:hover {
+	transform: translateY(-5px); /* Move up slightly on hover */
+	box-shadow:
+		rgba(50, 50, 93, 0.25) 0px 17px 27px -5px,
+		rgba(0, 0, 0, 0.3) 0px 12px 16px -8px; /* Adjust shadow */
+	background-color: #b9aa29; /* Change background color on hover */
+}
+
+.selected-pages a:hover::before {
+	transform: translateX(50%) skewX(45deg); /* Move and skew on hover */
+	background-color: rgba(
+		255,
+		255,
+		255,
+		0
+	); /* Transparent background color on hover */
+}
+
+@media (max-width: 768px) {
+	.selected-pages ul {
+		gap: 5px;
+	}
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "services-cards/services-cards",
+  "version": "0.1.0",
+  "title": "Service-card",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Example block scaffolded with Create Block tool.",
+  "example": {},
+  "supports": {
+    "align": true,
+    "anchor": true,
+    "color": {
+      "background": true,
+      "text": true,
+      "gradients": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "blockGap": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true,
+      "fontFamily": true,
+      "fontWeight": true,
+      "textTransform": true,
+      "textDecoration": true,
+      "letterSpacing": true
+    },
+    "html": false,
+    "defaultStylePicker": true
+  },
+  "attributes": {
+    "selectedPageTitles": {
+      "type": "array",
+      "default": []
+    },
+    "selectedPages": {
+      "type": "array",
+      "default": []
+    },
+    "animationColor": {
+      "type": "string",
+      "default": "#004d00"
+    }
+  },
+  "textdomain": "services-cards",
+  "editorScript": "file:./index.js",
+  "script": "file:./save.js",
+  "render": "file:./render.php",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
